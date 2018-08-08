@@ -8,7 +8,7 @@ WORKDIR ${DOCUMENT_ROOT}/..
 # Install Roundcube + plugins
 RUN VERSION=`latestversion roundcube/roundcubemail` \
     && rm -rf * \
-    && git clone --branch ${VERSION} --depth 1 https://github.com/roundcube/roundcubemail.git . \
+    && git clone --branch 1.3.7 --depth 1 https://github.com/roundcube/roundcubemail.git . \
     && rm -rf .git installer
 RUN composer self-update --snapshot \
     && mv composer.json-dist composer.json \
